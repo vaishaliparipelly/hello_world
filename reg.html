@@ -1,25 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
+<title>Registration Form</title>
 </head>
-<body>
-    <h1><b>EVENT REGISTRATION FORM</b></h1>
-    <div>
-    <form onsubmit="return validatereg()">
-    <p>Name</p>
-    <input type="text" placeholder="Enter name" id="a">
-    <p>Email</p>
-    <input type="email" placeholder="enter email" id="b">
-    <p>Phone number</p>
-    <input type="phone number" placeholder="enter number" id="c">
-    <a href="re.html">
-        <button type="submit">Register</button>
-    </a>
-    </form>
-    <div>
+
+<body bgcolor="lightblue" align="center">
+
+<h2>Event Registration Form</h2>
+
+<form onsubmit="return validate()">
+
+Name: <input type="text" id="name"><br><br>
+
+Mobile: <input type="text" id="mobile"><br><br>
+
+Email: <input type="email" id="email"><br><br>
+
+<select id="event">
+<option>Dance</option>
+<option>Music</option>
+<option>Art</option>
+</select><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+<script>
+function validate() {
+    var n = document.getElementById("name").value;
+    var m = document.getElementById("mobile").value;
+    var e = document.getElementById("email").value;
+
+    if (n == "" || m == "" || e == "") {
+        alert("Please fill all fields");
+        return false;
+    }
+
+    alert("Registration Successful");
+    return true;
+}
+</script>
+
 </body>
 </html>
